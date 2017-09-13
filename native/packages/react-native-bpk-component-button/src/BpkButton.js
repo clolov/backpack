@@ -27,10 +27,15 @@
 
  import styles from './BpkButton-styles';
 
- const getTextStyle = ({ type, large, disabled }) => {
+ const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
+
+ const getTextStyle = ({ type, selected, large, disabled }) => {
    const textStyle = [styles.base.text];
    if (styles[type].text) {
      textStyle.push(styles[type].text);
+   }
+   if (selected) {
+     textStyle.push(styles.selected.text);
    }
    if (large) {
      textStyle.push(styles.large.text);
@@ -41,10 +46,13 @@
    return textStyle;
  };
 
- const getButtonStyle = ({ type, disabled, selected }) => {
+ const getButtonStyle = ({ type, large, disabled, selected }) => {
    const btnStyle = [styles.base.button];
    if (styles[type].button) {
      btnStyle.push(styles[type].button);
+   }
+   if (large) {
+     btnStyle.push(styles.large.button);
    }
    if (selected) {
      btnStyle.push(styles.selected.button);
@@ -53,6 +61,21 @@
      btnStyle.push(styles.disabled.button);
    }
    return btnStyle;
+ };
+
+ const getContainerStyle = ({ title, large, style }) => {
+   const containerStyle = [styles.base.container];
+   if (style) {
+     containerStyle.push(style);
+   }
+   if (large) {
+     containerStyle.push(styles.large.container);
+   }
+   // If there's no title, it must be an icon only button.
+   if (!title) {
+     containerStyle.push(large ? styles.base.iconOnlyLarge : styles.base.iconOnly);
+   }
+   return containerStyle;
  };
 
  const getGradientColors = ({ type, disabled, selected }) => {
@@ -70,17 +93,26 @@
    const {
      type,
      title,
+     icon,
      onPress,
      large,
      disabled,
      selected,
-     children,
+     style,
      ...rest
    } = props;
+
+   // If there is both a title and an icon, they should be spaced apart.
+   // Otherwise, the content should be centered.
+   const flexJustify = title && icon ? 'space-between' : 'center';
+
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
    return (
-     <LinearGradient style={styles.base.container} colors={getGradientColors(props)}>
+     <LinearGradient
+       style={getContainerStyle(props)}
+       colors={getGradientColors(props)}
+     >
        <TouchableHighlight
          style={getButtonStyle(props)}
          disabled={disabled}
@@ -89,9 +121,18 @@
          underlayColor={styles.base.underlayColor}
          {...rest}
        >
-         <View>
-           <Text style={getTextStyle(props)}>{title}</Text>
-           {children}
+         <View
+           style={{
+             flex: 1,
+             justifyContent: flexJustify,
+             flexDirection: 'row',
+             alignItems: 'center',
+           }}
+         >
+           { title &&
+             <Text style={getTextStyle(props)}>{title}</Text>
+           }
+           {icon}
          </View>
        </TouchableHighlight>
      </LinearGradient>
@@ -100,21 +141,24 @@
 
  BpkButton.propTypes = {
    title: PropTypes.string,
+   icon: PropTypes.element,
    onPress: PropTypes.func.isRequired,
-   type: PropTypes.string.isRequired,
+   type: PropTypes.oneOf(BUTTON_TYPES),
    large: PropTypes.bool,
    disabled: PropTypes.bool,
    selected: PropTypes.bool,
-   children: PropTypes.node,
+   style: View.propTypes.style,
  };
 
  BpkButton.defaultProps = {
    title: null,
+   icon: null,
    type: 'primary',
    large: false,
    disabled: false,
    selected: false,
-   children: null,
+   style: null,
  };
 
  export default BpkButton;
+ export { BUTTON_TYPES };

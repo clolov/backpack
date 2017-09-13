@@ -10,28 +10,44 @@ const tokens = Platform.select({
 
 const styles = {
   base: {
-    underlayColor: 'rgba(0, 0, 0, 0.15)',
+    underlayColor: 'rgba(0, 0, 0, 0.15)', // TODO tokenize
     text: {
       backgroundColor: 'transparent',
       color: tokens.colorWhite,
       fontSize: tokens.textSmFontSize,
       fontWeight: '600', // TODO tokenize
-      textAlign: 'center',
     },
     container: {
-      borderRadius: 100,
+      borderRadius: 16,
+      height: 32,
+      minWidth: 150,
+    },
+    iconOnly: {
+      minWidth: 32,
+    },
+    iconOnlyLarge: {
+      minWidth: 48,
     },
     button: {
-      borderRadius: 100,
+      borderRadius: 16,
+      height: 32,
       paddingTop: tokens.spacingMd,
       paddingBottom: tokens.spacingMd,
-      paddingLeft: tokens.spacingLg,
-      paddingRight: tokens.spacingLg,
+      paddingLeft: tokens.spacingMd,
+      paddingRight: tokens.spacingMd,
     },
   },
   large: {
+    container: {
+      borderRadius: 24,
+      height: 48,
+    },
     text: {
       fontSize: tokens.textLgFontSize,
+    },
+    button: {
+      borderRadius: 24,
+      height: 48,
     },
   },
   disabled: {
@@ -39,9 +55,18 @@ const styles = {
     text: {
       color: tokens.colorGray300,
     },
+    button: {
+      borderColor: 'transparent',
+    },
   },
   selected: {
     gradientColors: [tokens.colorBlue600, tokens.colorBlue700],
+    text: {
+      color: tokens.colorWhite,
+    },
+    button: {
+      borderColor: 'transparent',
+    },
   },
   primary: {
     gradientColors: [tokens.colorGreen500, tokens.colorGreen600],
@@ -58,8 +83,8 @@ const styles = {
       // minus the borderWidth so it's the same size as other buttons.
       paddingTop: tokens.spacingMd - 2,
       paddingBottom: tokens.spacingMd - 2,
-      paddingLeft: tokens.spacingLg - 2,
-      paddingRight: tokens.spacingLg - 2,
+      paddingLeft: tokens.spacingMd - 2,
+      paddingRight: tokens.spacingMd - 2,
     },
   },
   destructive: {
@@ -74,8 +99,8 @@ const styles = {
       // minus the borderWidth so it's the same size as other buttons.
       paddingTop: tokens.spacingMd - 2,
       paddingBottom: tokens.spacingMd - 2,
-      paddingLeft: tokens.spacingLg - 2,
-      paddingRight: tokens.spacingLg - 2,
+      paddingLeft: tokens.spacingMd - 2,
+      paddingRight: tokens.spacingMd - 2,
     },
   },
   featured: {

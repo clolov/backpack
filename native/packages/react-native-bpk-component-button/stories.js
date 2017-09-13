@@ -1,27 +1,154 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, ScrollView, Image, Platform } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
-import BpkButton from './src/BpkButton';
+import BpkText from 'react-native-bpk-component-text';
 
-import ArrowImage from './rightarrow_360.png';
+import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
+
+import ArrowImageSrc from './rightarrow_360.png';
+
+const IOS_TOKENS = require('bpk-tokens/tokens/ios/base.react.native.common.js');
+const ANDROID_TOKENS = require('bpk-tokens/tokens/android/base.react.native.common.js');
+
+const tokens = Platform.select({
+  ios: () => IOS_TOKENS,
+  android: () => ANDROID_TOKENS,
+})();
 
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
   },
-  bottomMargin: {
+  btnContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+  },
+  btnExample: {
     marginBottom: 10,
+    marginRight: 10,
   },
   image: {
-    height: 12,
-    width: 12,
+    height: 15,
+    width: 17,
+  },
+  imageLarge: {
+    height: 22,
+    width: 26,
+  },
+  imageSecondary: {
+    tintColor: tokens.colorBlue500,
+  },
+  imageDestructive: {
+    tintColor: tokens.colorRed500,
   },
 });
+
+const capitalise = input => input[0].toUpperCase() + input.substring(1);
+
+// const ArrowImage = <Image source={ArrowImageSrc} style={styles.image} />;
+// const ArrowImageLg = <Image source={ArrowImageSrc} style={styles.imageLarge} />;
+
+const ArrowImage = ({ large, type }) => {
+  const style = [large ? styles.imageLarge : styles.image];
+  if (type === 'destructive') {
+    style.push(styles.imageDestructive);
+  }
+  if (type === 'secondary') {
+    style.push(styles.imageSecondary);
+  }
+  return <Image source={ArrowImageSrc} style={style} />;
+};
+
+const buttonStyles = BUTTON_TYPES.map(type => (
+  <View key={type}>
+    <BpkText textStyle="xxl">{capitalise(type)}</BpkText>
+    <BpkText textStyle="xl">Standard</BpkText>
+    <View style={styles.btnContainer}>
+      <BpkButton
+        type={type}
+        title={capitalise(type)}
+        onPress={action(`${type} pressed`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        type={type}
+        selected
+        title="Selected"
+        onPress={action(`${type} selected pressed`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        type={type}
+        disabled
+        title="Disabled"
+        onPress={action(`${type} disabled pressed, somehow`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        type={type}
+        title="With icon"
+        icon={<ArrowImage type={type} />}
+        onPress={action(`${type} with icon clicked`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        type={type}
+        icon={<ArrowImage type={type} />}
+        onPress={action(`${type} icon only button clicked`)}
+        style={styles.btnExample}
+      />
+    </View>
+
+    <BpkText textStyle="xl">Large</BpkText>
+    <View style={styles.btnContainer}>
+      <BpkButton
+        large
+        type={type}
+        title={capitalise(type)}
+        onPress={action(`${type} pressed`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        large
+        type={type}
+        selected
+        title="Selected"
+        onPress={action(`${type} selected pressed`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        large
+        type={type}
+        disabled
+        title="Disabled"
+        onPress={action(`${type} disabled pressed, somehow`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        large
+        type={type}
+        title="With icon"
+        icon={<ArrowImage large type={type} />}
+        onPress={action(`${type} with icon clicked`)}
+        style={styles.btnExample}
+      />
+      <BpkButton
+        large
+        type={type}
+        icon={<ArrowImage large type={type} />}
+        onPress={action(`${type} icon only button clicked`)}
+        style={styles.btnExample}
+      />
+    </View>
+  </View>
+));
 
 storiesOf('BpkButton', module)
   .addDecorator(getStory =>
@@ -29,17 +156,31 @@ storiesOf('BpkButton', module)
       {getStory()}
     </View>,
   )
-  .add('Primary', () => (
-    <View>
-      <BpkButton type="primary" title="Primary" onPress={action('primary clicked')} />
-      <BpkButton type="primary" onPress={action('primary clicked')}>
-        <Image source={ArrowImage} style={styles.image} />
-      </BpkButton>
-      <BpkButton type="primary" large title="Primary" onPress={action('primary large clicked')} />
-      <BpkButton type="primary" disabled title="Disabled" onPress={action('disabled clicked')} />
-      <BpkButton type="primary" selected title="Selected" onPress={action('selected clicked')} />
-      <BpkButton type="featured" title="Featured" onPress={action('featured clicked')} />
-      <BpkButton type="secondary" title="Secondary" onPress={action('secondary clicked')} />
-      <BpkButton type="destructive" title="Destructive" onPress={action('destructive clicked')} />
-    </View>
+  .add('Default', () => (
+    <ScrollView>
+      {buttonStyles}
+    </ScrollView>
+
+
+    // <View>
+    //   <View style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}>
+    //     <BpkButton type="primary" title="Primary" onPress={action('primary clicked')} />
+    //   </View>
+    //   <View>
+    //     <BpkButton type="primary" title="Icon" onPress={action('primary clicked')}>
+    //       <Image source={ArrowImage} style={styles.image} />
+    //     </BpkButton>
+    //
+    //     <BpkButton type="primary" onPress={action('primary clicked')}>
+    //       <Image source={ArrowImage} style={styles.image} />
+    //     </BpkButton>
+    //
+    //     <BpkButton type="primary" large title="Primary" onPress={action('primary large clicked')} />
+    //     <BpkButton type="primary" disabled title="Disabled" onPress={action('disabled clicked')} />
+    //     <BpkButton type="primary" selected title="Selected" onPress={action('selected clicked')} />
+    //     <BpkButton type="featured" title="Featured" onPress={action('featured clicked')} />
+    //     <BpkButton type="secondary" title="Secondary" onPress={action('secondary clicked')} />
+    //     <BpkButton type="destructive" title="Destructive" onPress={action('destructive clicked')} />
+    //   </View>
+    // </View>
   ));
