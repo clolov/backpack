@@ -1,5 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Image, Platform } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Image,
+  Platform,
+} from 'react-native';
+
+import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
@@ -52,9 +60,6 @@ const styles = StyleSheet.create({
 
 const capitalise = input => input[0].toUpperCase() + input.substring(1);
 
-// const ArrowImage = <Image source={ArrowImageSrc} style={styles.image} />;
-// const ArrowImageLg = <Image source={ArrowImageSrc} style={styles.imageLarge} />;
-
 const ArrowImage = ({ large, type }) => {
   const style = [large ? styles.imageLarge : styles.image];
   if (type === 'destructive') {
@@ -64,6 +69,16 @@ const ArrowImage = ({ large, type }) => {
     style.push(styles.imageSecondary);
   }
   return <Image source={ArrowImageSrc} style={style} />;
+};
+
+ArrowImage.propTypes = {
+  large: PropTypes.bool,
+  type: PropTypes.string,
+};
+
+ArrowImage.defaultProps = {
+  large: false,
+  type: '',
 };
 
 const buttonStyles = BUTTON_TYPES.map(type => (
@@ -160,27 +175,4 @@ storiesOf('BpkButton', module)
     <ScrollView>
       {buttonStyles}
     </ScrollView>
-
-
-    // <View>
-    //   <View style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}>
-    //     <BpkButton type="primary" title="Primary" onPress={action('primary clicked')} />
-    //   </View>
-    //   <View>
-    //     <BpkButton type="primary" title="Icon" onPress={action('primary clicked')}>
-    //       <Image source={ArrowImage} style={styles.image} />
-    //     </BpkButton>
-    //
-    //     <BpkButton type="primary" onPress={action('primary clicked')}>
-    //       <Image source={ArrowImage} style={styles.image} />
-    //     </BpkButton>
-    //
-    //     <BpkButton type="primary" large title="Primary" onPress={action('primary large clicked')} />
-    //     <BpkButton type="primary" disabled title="Disabled" onPress={action('disabled clicked')} />
-    //     <BpkButton type="primary" selected title="Selected" onPress={action('selected clicked')} />
-    //     <BpkButton type="featured" title="Featured" onPress={action('featured clicked')} />
-    //     <BpkButton type="secondary" title="Secondary" onPress={action('secondary clicked')} />
-    //     <BpkButton type="destructive" title="Destructive" onPress={action('destructive clicked')} />
-    //   </View>
-    // </View>
   ));
