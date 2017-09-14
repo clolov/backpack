@@ -31,7 +31,7 @@
 
  const getTextStyle = ({ type, selected, large, disabled }) => {
    const textStyle = [styles.base.text];
-   if (styles[type].text) {
+   if (styles[type] && styles[type].text) {
      textStyle.push(styles[type].text);
    }
    if (selected) {
@@ -48,7 +48,7 @@
 
  const getButtonStyle = ({ type, large, disabled, selected }) => {
    const btnStyle = [styles.base.button];
-   if (styles[type].button) {
+   if (styles[type] && styles[type].button) {
      btnStyle.push(styles[type].button);
    }
    if (large) {
@@ -79,14 +79,14 @@
  };
 
  const getGradientColors = ({ type, disabled, selected }) => {
-   let stylesToApply = styles[type].gradientColors;
+   let gradientColors = styles.gradientColors[type];
    if (selected) {
-     stylesToApply = styles.selected.gradientColors;
+     gradientColors = styles.gradientColors.selected;
    }
    if (disabled) {
-     stylesToApply = styles.disabled.gradientColors;
+     gradientColors = styles.gradientColors.disabled;
    }
-   return stylesToApply;
+   return gradientColors;
  };
 
  const BpkButton = (props) => {
@@ -118,7 +118,7 @@
          disabled={disabled}
          selected={selected}
          onPress={onPress}
-         underlayColor={styles.base.underlayColor}
+         underlayColor={styles.underlayColor}
          {...rest}
        >
          <View
