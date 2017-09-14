@@ -8,29 +8,37 @@ const tokens = Platform.select({
   android: () => ANDROID_TOKENS,
 })();
 
+// Slight darkness to use when buttons are pressed in.
 const underlayColor = 'rgba(0, 0, 0, 0.15)';
+
+// These should probably be their own tokens.
+// For now they are derived from existing tokens.
+const largeHeight = tokens.spacingXl * 1.5;
+const smallBorderWidth = tokens.spacingSm / 2;
 
 const base = StyleSheet.create({
   text: {
     backgroundColor: 'transparent',
     color: tokens.colorWhite,
     fontSize: tokens.textSmFontSize,
-    fontWeight: '600', // TODO tokenize
+    fontWeight: '600', // TODO tokens.textEmphasizedFontWeight
   },
   container: {
-    borderRadius: 16,
-    height: 32,
+    // Must be half the height to get rounded corners.
+    borderRadius: tokens.spacingXl / 2,
+    height: tokens.spacingXl,
     minWidth: 150,
   },
   iconOnly: {
-    minWidth: 32,
+    minWidth: tokens.spacingXl,
   },
   iconOnlyLarge: {
-    minWidth: 48,
+    minWidth: largeHeight,
   },
   button: {
-    borderRadius: 16,
-    height: 32,
+    // Must be half the height to get rounded corners.
+    borderRadius: tokens.spacingXl / 2,
+    height: tokens.spacingXl,
     paddingTop: tokens.spacingMd,
     paddingBottom: tokens.spacingMd,
     paddingLeft: tokens.spacingMd,
@@ -40,15 +48,16 @@ const base = StyleSheet.create({
 
 const large = StyleSheet.create({
   container: {
-    borderRadius: 24,
-    height: 48,
+    borderRadius: largeHeight / 2,
+    height: largeHeight,
   },
   text: {
     fontSize: tokens.textLgFontSize,
   },
   button: {
-    borderRadius: 24,
-    height: 48,
+    // Must be half the height to get rounded corners.
+    borderRadius: largeHeight / 2,
+    height: largeHeight,
   },
 });
 
@@ -76,13 +85,13 @@ const secondary = StyleSheet.create({
   },
   button: {
     borderColor: tokens.colorGray100,
-    borderWidth: 2, // TODO tokenize
+    borderWidth: smallBorderWidth,
 
     // minus the borderWidth so it's the same size as other buttons.
-    paddingTop: tokens.spacingMd - 2,
-    paddingBottom: tokens.spacingMd - 2,
-    paddingLeft: tokens.spacingMd - 2,
-    paddingRight: tokens.spacingMd - 2,
+    paddingTop: tokens.spacingMd - smallBorderWidth,
+    paddingBottom: tokens.spacingMd - smallBorderWidth,
+    paddingLeft: tokens.spacingMd - smallBorderWidth,
+    paddingRight: tokens.spacingMd - smallBorderWidth,
   },
 });
 
@@ -92,23 +101,23 @@ const destructive = StyleSheet.create({
   },
   button: {
     borderColor: tokens.colorGray100,
-    borderWidth: 2, // TODO tokenize
+    borderWidth: smallBorderWidth,
 
     // minus the borderWidth so it's the same size as other buttons.
-    paddingTop: tokens.spacingMd - 2,
-    paddingBottom: tokens.spacingMd - 2,
-    paddingLeft: tokens.spacingMd - 2,
-    paddingRight: tokens.spacingMd - 2,
+    paddingTop: tokens.spacingMd - smallBorderWidth,
+    paddingBottom: tokens.spacingMd - smallBorderWidth,
+    paddingLeft: tokens.spacingMd - smallBorderWidth,
+    paddingRight: tokens.spacingMd - smallBorderWidth,
   },
 });
 
 const gradientColors = {
   primary: [tokens.colorGreen500, tokens.colorGreen600],
-  featured: ['rgb(250, 72, 138)', 'rgb(217, 43, 107)'],
+  featured: ['rgb(250, 72, 138)', 'rgb(217, 43, 107)'], // TODO [tokens.colorPink500, tokens.colorPink600]
   destructive: [tokens.colorWhite, tokens.colorWhite],
   secondary: [tokens.colorWhite, tokens.colorWhite],
   selected: [tokens.colorBlue600, tokens.colorBlue700],
-  disabled: ['rgb(223, 220, 227)', 'rgb(223, 220, 227)'],
+  disabled: [tokens.colorGray100, tokens.colorGray100],
 };
 
 const styles = {

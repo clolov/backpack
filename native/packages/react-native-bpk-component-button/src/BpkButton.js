@@ -109,10 +109,7 @@
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
    return (
-     <LinearGradient
-       style={getContainerStyle(props)}
-       colors={getGradientColors(props)}
-     >
+     <LinearGradient style={getContainerStyle(props)} colors={getGradientColors(props)}>
        <TouchableHighlight
          style={getButtonStyle(props)}
          disabled={disabled}

@@ -212,6 +212,11 @@
       "value": "{!LETTER_SPACING_XXL}",
       "type": "number",
       "category": "letter-spacings"
+    },
+    "TEXT_EMPHASIZED_FONT_WEIGHT": {
+      "value": "{!FONT_WEIGHT_SEMIBOLD}",
+      "type": "string",
+      "category": "font-weights"
     }
   }
 }

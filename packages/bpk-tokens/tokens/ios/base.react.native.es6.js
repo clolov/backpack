@@ -68,6 +68,16 @@ export const colorYellow600 = "rgb(240, 176, 0)";
 export const colorYellow700 = "rgb(225, 165, 0)";
 export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
+export const colorPink50 = "rgb(253, 228, 237)";
+export const colorPink100 = "rgb(255, 191, 215)";
+export const colorPink200 = "rgb(255, 148, 187)";
+export const colorPink300 = "rgb(255, 115, 166)";
+export const colorPink400 = "rgb(255, 97, 155)";
+export const colorPink500 = "rgb(250, 72, 138)";
+export const colorPink600 = "rgb(217, 43, 107)";
+export const colorPink700 = "rgb(197, 15, 82)";
+export const colorPink800 = "rgb(176, 12, 72)";
+export const colorPink900 = "rgb(148, 5, 58)";
 export const spacingSm = 4;
 export const spacingMd = 8;
 export const spacingBase = 16;
@@ -116,6 +126,7 @@ export const textXxlFontSize = 34;
 export const textXxlFontWeight = "700";
 export const textXxlLineHeight = 41;
 export const textXxlLetterSpacing = 0.41;
+export const textEmphasizedFontWeight = "600";
 export const colors = {
 colorWhite,
 colorBlue50,
@@ -168,6 +179,16 @@ colorYellow600,
 colorYellow700,
 colorYellow800,
 colorYellow900,
+colorPink50,
+colorPink100,
+colorPink200,
+colorPink300,
+colorPink400,
+colorPink500,
+colorPink600,
+colorPink700,
+colorPink800,
+colorPink900,
 };
 export const spacings = {
 spacingSm,
@@ -212,6 +233,7 @@ textBaseFontWeight,
 textLgFontWeight,
 textXlFontWeight,
 textXxlFontWeight,
+textEmphasizedFontWeight,
 };
 export const lineHeights = {
 textXsLineHeight,
