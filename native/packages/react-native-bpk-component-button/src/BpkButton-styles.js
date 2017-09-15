@@ -16,25 +16,18 @@ const underlayColor = 'rgba(0, 0, 0, 0.15)';
 const largeHeight = tokens.spacingXl * 1.5;
 const smallBorderWidth = tokens.spacingSm / 2;
 
+// The base styles that are initially applied to all buttons.
 const base = StyleSheet.create({
-  text: {
-    backgroundColor: 'transparent',
-    color: tokens.colorWhite,
-    fontSize: tokens.textSmFontSize,
-    fontWeight: '600', // TODO tokens.textEmphasizedFontWeight
-  },
+
+  // Applied to the outer LinearGradient element.
   container: {
     // Must be half the height to get rounded corners.
     borderRadius: tokens.spacingXl / 2,
     height: tokens.spacingXl,
     minWidth: 150,
   },
-  iconOnly: {
-    minWidth: tokens.spacingXl,
-  },
-  iconOnlyLarge: {
-    minWidth: largeHeight,
-  },
+
+  // Applied to the TouchableHighlight element.
   button: {
     // Must be half the height to get rounded corners.
     borderRadius: tokens.spacingXl / 2,
@@ -44,72 +37,104 @@ const base = StyleSheet.create({
     paddingLeft: tokens.spacingMd,
     paddingRight: tokens.spacingMd,
   },
-});
 
-const large = StyleSheet.create({
-  container: {
-    borderRadius: largeHeight / 2,
-    height: largeHeight,
+  // Applied to the View element that encloses the text and icon.
+  view: {
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
-  text: {
-    fontSize: tokens.textLgFontSize,
-  },
-  button: {
-    // Must be half the height to get rounded corners.
-    borderRadius: largeHeight / 2,
-    height: largeHeight,
-  },
-});
 
-const disabled = StyleSheet.create({
+  // Applied to the Text element.
   text: {
-    color: tokens.colorGray300,
-  },
-  button: {
-    borderColor: 'transparent',
-  },
-});
-
-const selected = StyleSheet.create({
-  text: {
+    backgroundColor: 'transparent',
     color: tokens.colorWhite,
-  },
-  button: {
-    borderColor: 'transparent',
-  },
-});
-
-const secondary = StyleSheet.create({
-  text: {
-    color: tokens.colorBlue500,
-  },
-  button: {
-    borderColor: tokens.colorGray100,
-    borderWidth: smallBorderWidth,
-
-    // minus the borderWidth so it's the same size as other buttons.
-    paddingTop: tokens.spacingMd - smallBorderWidth,
-    paddingBottom: tokens.spacingMd - smallBorderWidth,
-    paddingLeft: tokens.spacingMd - smallBorderWidth,
-    paddingRight: tokens.spacingMd - smallBorderWidth,
+    fontSize: tokens.textSmFontSize,
+    fontWeight: '600', // TODO tokens.textEmphasizedFontWeight
   },
 });
 
-const destructive = StyleSheet.create({
-  text: {
-    color: tokens.colorRed500,
-  },
-  button: {
-    borderColor: tokens.colorGray100,
-    borderWidth: smallBorderWidth,
+const types = {
+  secondary: StyleSheet.create({
+    button: {
+      borderColor: tokens.colorGray100,
+      borderWidth: smallBorderWidth,
 
-    // minus the borderWidth so it's the same size as other buttons.
-    paddingTop: tokens.spacingMd - smallBorderWidth,
-    paddingBottom: tokens.spacingMd - smallBorderWidth,
-    paddingLeft: tokens.spacingMd - smallBorderWidth,
-    paddingRight: tokens.spacingMd - smallBorderWidth,
-  },
-});
+      // minus the borderWidth so it's the same size as other buttons.
+      paddingTop: tokens.spacingMd - smallBorderWidth,
+      paddingBottom: tokens.spacingMd - smallBorderWidth,
+      paddingLeft: tokens.spacingMd - smallBorderWidth,
+      paddingRight: tokens.spacingMd - smallBorderWidth,
+    },
+    text: {
+      color: tokens.colorBlue500,
+    },
+  }),
+  destructive: StyleSheet.create({
+    button: {
+      borderColor: tokens.colorGray100,
+      borderWidth: smallBorderWidth,
+
+      // minus the borderWidth so it's the same size as other buttons.
+      paddingTop: tokens.spacingMd - smallBorderWidth,
+      paddingBottom: tokens.spacingMd - smallBorderWidth,
+      paddingLeft: tokens.spacingMd - smallBorderWidth,
+      paddingRight: tokens.spacingMd - smallBorderWidth,
+    },
+    text: {
+      color: tokens.colorRed500,
+    },
+  }),
+};
+
+const modifiers = {
+  large: StyleSheet.create({
+    container: {
+      borderRadius: largeHeight / 2,
+      height: largeHeight,
+    },
+    button: {
+      // Must be half the height to get rounded corners.
+      borderRadius: largeHeight / 2,
+      height: largeHeight,
+    },
+    text: {
+      fontSize: tokens.textLgFontSize,
+    },
+  }),
+  selected: StyleSheet.create({
+    text: {
+      color: tokens.colorWhite,
+    },
+    button: {
+      borderColor: 'transparent',
+    },
+  }),
+  disabled: StyleSheet.create({
+    button: {
+      borderColor: 'transparent',
+    },
+    text: {
+      color: tokens.colorGray300,
+    },
+  }),
+  iconOnly: StyleSheet.create({
+    container: {
+      minWidth: tokens.spacingXl,
+    },
+  }),
+  iconOnlyLarge: StyleSheet.create({
+    container: {
+      minWidth: largeHeight,
+    },
+  }),
+  textAndIcon: StyleSheet.create({
+    view: {
+      justifyContent: 'space-between',
+    },
+  }),
+};
 
 const gradientColors = {
   primary: [tokens.colorGreen500, tokens.colorGreen600],
@@ -122,11 +147,8 @@ const gradientColors = {
 
 const styles = {
   base,
-  large,
-  disabled,
-  selected,
-  secondary,
-  destructive,
+  types,
+  modifiers,
   gradientColors,
   underlayColor,
 };

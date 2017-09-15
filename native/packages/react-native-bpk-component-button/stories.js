@@ -38,10 +38,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
   },
-  btnExample: {
-    marginBottom: 10,
-    marginRight: 10,
-  },
   image: {
     height: 15,
     width: 17,
@@ -55,6 +51,13 @@ const styles = StyleSheet.create({
   },
   imageDestructive: {
     tintColor: tokens.colorRed500,
+  },
+});
+
+const buttonStyles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+    marginRight: 10,
   },
 });
 
@@ -81,7 +84,7 @@ ArrowImage.defaultProps = {
   type: '',
 };
 
-const buttonStyles = BUTTON_TYPES.map(type => (
+const buttonStories = BUTTON_TYPES.map(type => (
   <View key={type}>
     <BpkText textStyle="xxl">{capitalise(type)}</BpkText>
     <BpkText textStyle="xl">Standard</BpkText>
@@ -90,34 +93,34 @@ const buttonStyles = BUTTON_TYPES.map(type => (
         type={type}
         title={capitalise(type)}
         onPress={action(`${type} pressed`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         type={type}
         selected
         title="Selected"
         onPress={action(`${type} selected pressed`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         type={type}
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         type={type}
         title="With icon"
         icon={<ArrowImage type={type} />}
         onPress={action(`${type} with icon clicked`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         type={type}
         icon={<ArrowImage type={type} />}
         onPress={action(`${type} icon only button clicked`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
     </View>
 
@@ -128,7 +131,7 @@ const buttonStyles = BUTTON_TYPES.map(type => (
         type={type}
         title={capitalise(type)}
         onPress={action(`${type} pressed`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         large
@@ -136,7 +139,7 @@ const buttonStyles = BUTTON_TYPES.map(type => (
         selected
         title="Selected"
         onPress={action(`${type} selected pressed`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         large
@@ -144,7 +147,7 @@ const buttonStyles = BUTTON_TYPES.map(type => (
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         large
@@ -152,14 +155,14 @@ const buttonStyles = BUTTON_TYPES.map(type => (
         title="With icon"
         icon={<ArrowImage large type={type} />}
         onPress={action(`${type} with icon clicked`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
       <BpkButton
         large
         type={type}
         icon={<ArrowImage large type={type} />}
         onPress={action(`${type} icon only button clicked`)}
-        style={styles.btnExample}
+        style={buttonStyles}
       />
     </View>
   </View>
@@ -173,6 +176,6 @@ storiesOf('BpkButton', module)
   )
   .add('Default', () => (
     <ScrollView>
-      {buttonStyles}
+      {buttonStories}
     </ScrollView>
   ));

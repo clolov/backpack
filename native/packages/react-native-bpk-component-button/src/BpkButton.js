@@ -29,53 +29,40 @@
 
  const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
 
- const getTextStyle = ({ type, selected, large, disabled }) => {
-   const textStyle = [styles.base.text];
-   if (styles[type] && styles[type].text) {
-     textStyle.push(styles[type].text);
+ const getStyleForElement = (elementType, { type, title, icon, selected, large, disabled, style }) => {
+   // Start with base style.
+   const styleForElement = [styles.base[elementType]];
+
+   // Add styles for the button type.
+   if (styles.types[type] && styles.types[type][elementType]) {
+     styleForElement.push(styles.types[type][elementType]);
+   }
+
+   // Add modifiers. Disabled comes last to override other styles.
+   if (large) {
+     styleForElement.push(styles.modifiers.large[elementType]);
    }
    if (selected) {
-     textStyle.push(styles.selected.text);
-   }
-   if (large) {
-     textStyle.push(styles.large.text);
+     styleForElement.push(styles.modifiers.selected[elementType]);
    }
    if (disabled) {
-     textStyle.push(styles.disabled.text);
+     styleForElement.push(styles.modifiers.disabled[elementType]);
    }
-   return textStyle;
- };
 
- const getButtonStyle = ({ type, large, disabled, selected }) => {
-   const btnStyle = [styles.base.button];
-   if (styles[type] && styles[type].button) {
-     btnStyle.push(styles[type].button);
-   }
-   if (large) {
-     btnStyle.push(styles.large.button);
-   }
-   if (selected) {
-     btnStyle.push(styles.selected.button);
-   }
-   if (disabled) {
-     btnStyle.push(styles.disabled.button);
-   }
-   return btnStyle;
- };
-
- const getContainerStyle = ({ title, large, style }) => {
-   const containerStyle = [styles.base.container];
-   if (style) {
-     containerStyle.push(style);
-   }
-   if (large) {
-     containerStyle.push(styles.large.container);
-   }
    // If there's no title, it must be an icon only button.
    if (!title) {
-     containerStyle.push(large ? styles.base.iconOnlyLarge : styles.base.iconOnly);
+     styleForElement.push(large ? styles.modifiers.iconOnlyLarge[elementType] : styles.modifiers.iconOnly[elementType]);
+   } else if (icon) {
+     // If it has a title and icon, get the style for that.
+     styleForElement.push(styles.modifiers.textAndIcon[elementType]);
    }
-   return containerStyle;
+
+   // Userland styles.
+   if (style[elementType]) {
+     styleForElement.push(style[elementType]);
+   }
+
+   return styleForElement;
  };
 
  const getGradientColors = ({ type, disabled, selected }) => {
@@ -102,32 +89,21 @@
      ...rest
    } = props;
 
-   // If there is both a title and an icon, they should be spaced apart.
-   // Otherwise, the content should be centered.
-   const flexJustify = title && icon ? 'space-between' : 'center';
-
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
    return (
-     <LinearGradient style={getContainerStyle(props)} colors={getGradientColors(props)}>
+     <LinearGradient style={getStyleForElement('container', props)} colors={getGradientColors(props)}>
        <TouchableHighlight
-         style={getButtonStyle(props)}
+         style={getStyleForElement('button', props)}
          disabled={disabled}
          selected={selected}
          onPress={onPress}
          underlayColor={styles.underlayColor}
          {...rest}
        >
-         <View
-           style={{
-             flex: 1,
-             justifyContent: flexJustify,
-             flexDirection: 'row',
-             alignItems: 'center',
-           }}
-         >
+         <View style={getStyleForElement('view', props)}>
            { title &&
-             <Text style={getTextStyle(props)}>{title}</Text>
+             <Text style={getStyleForElement('text', props)}>{title}</Text>
            }
            {icon}
          </View>
