@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
- import 'react-native';
+ import { Image } from 'react-native';
  import React from 'react';
  import renderer from 'react-test-renderer';
 
- import BpkButton from './BpkButton';
+ import BpkButton, { BUTTON_TYPES } from './BpkButton';
 
  jest.mock('react-native', () => {
    const reactNative = require.requireActual('react-native');
@@ -32,6 +32,7 @@
    return reactNative;
  });
 
+ jest.mock('Image', () => 'Image');
 
  describe('iOS', () => {
    describe('BpkButton', () => {
@@ -42,11 +43,62 @@
        expect(tree).toMatchSnapshot();
      });
 
-     it('should support overwriting styles', () => {
+     it('should support the "large" property', () => {
        const tree = renderer.create(
-         <BpkButton title="Lorem ipsum" onPress={() => {}} style={{ color: 'red' }} />,
+         <BpkButton large title="Lorem ipsum" onPress={() => {}} />,
        ).toJSON();
        expect(tree).toMatchSnapshot();
+     });
+
+     it('should support the "selected" property', () => {
+       const tree = renderer.create(
+         <BpkButton selected title="Lorem ipsum" onPress={() => {}} />,
+       ).toJSON();
+       expect(tree).toMatchSnapshot();
+     });
+
+     it('should support the "disabled" property', () => {
+       const tree = renderer.create(
+         <BpkButton large title="Lorem ipsum" onPress={() => {}} />,
+       ).toJSON();
+       expect(tree).toMatchSnapshot();
+     });
+
+     it('should support having an icon as well as a title', () => {
+       const tree = renderer.create(
+         <BpkButton
+           icon={<Image source="../rightarrow_360.png" />}
+           title="Lorem ipsum"
+           onPress={() => {}}
+         />,
+       ).toJSON();
+       expect(tree).toMatchSnapshot();
+     });
+
+     it('should support having only an icon', () => {
+       const tree = renderer.create(
+         <BpkButton
+           icon={<Image source="../rightarrow_360.png" />}
+           onPress={() => {}}
+         />,
+       ).toJSON();
+       expect(tree).toMatchSnapshot();
+     });
+
+     it('should support overwriting styles', () => {
+       const tree = renderer.create(
+         <BpkButton title="Lorem ipsum" onPress={() => {}} style={{ width: 100 }} />,
+       ).toJSON();
+       expect(tree).toMatchSnapshot();
+     });
+
+     BUTTON_TYPES.forEach((buttonType) => {
+       it(`should render correctly with type="${buttonType}"`, () => {
+         const tree = renderer.create(
+           <BpkButton type={buttonType} title="Lorem ipsum" onPress={() => {}} />,
+         ).toJSON();
+         expect(tree).toMatchSnapshot();
+       });
      });
    });
  });
