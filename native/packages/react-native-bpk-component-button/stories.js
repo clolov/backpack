@@ -152,7 +152,7 @@ const buttonStories = BUTTON_TYPES.map(type => (
       <BpkButton
         large
         type={type}
-        title="Search for flights hello world foo bar"
+        title="With icon"
         icon={<ArrowImage large type={type} />}
         onPress={action(`${type} with icon clicked`)}
         style={buttonStyles}
