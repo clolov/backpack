@@ -3,7 +3,7 @@
   "name": "react-native-bpk-component-button",
   "version": "0.0.0",
   "main": "index.js",
-  "description": "Backpack button component.",
+  "description": "Backpack React Native button component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"

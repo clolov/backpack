@@ -23,7 +23,7 @@ const base = StyleSheet.create({
   container: {
     // Must be half the height to get rounded corners.
     borderRadius: tokens.spacingXl / 2,
-    height: tokens.spacingXl,
+    minHeight: tokens.spacingXl,
     minWidth: 150,
   },
 
@@ -31,7 +31,7 @@ const base = StyleSheet.create({
   button: {
     // Must be half the height to get rounded corners.
     borderRadius: tokens.spacingXl / 2,
-    height: tokens.spacingXl,
+    minHeight: tokens.spacingXl,
     paddingTop: tokens.spacingMd,
     paddingBottom: tokens.spacingMd,
     paddingLeft: tokens.spacingMd,
@@ -92,12 +92,13 @@ const modifiers = {
   large: StyleSheet.create({
     container: {
       borderRadius: largeHeight / 2,
-      height: largeHeight,
+      minHeight: largeHeight,
     },
     button: {
       // Must be half the height to get rounded corners.
       borderRadius: largeHeight / 2,
-      height: largeHeight,
+      minHeight: largeHeight,
+      paddingLeft: tokens.spacingMd,
     },
     text: {
       fontSize: tokens.textLgFontSize,
@@ -130,8 +131,27 @@ const modifiers = {
     },
   }),
   textAndIcon: StyleSheet.create({
+    button: {
+      paddingLeft: tokens.spacingSm * 3,
+      paddingRight: tokens.spacingSm * 3,
+    },
     view: {
       justifyContent: 'space-between',
+    },
+    text: {
+      marginRight: tokens.spacingSm,
+    },
+  }),
+  textAndIconLarge: StyleSheet.create({
+    button: {
+      paddingLeft: tokens.spacingBase,
+      paddingRight: tokens.spacingBase,
+    },
+    view: {
+      justifyContent: 'space-between',
+    },
+    text: {
+      marginRight: tokens.spacingSm,
     },
   }),
 };

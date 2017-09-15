@@ -54,7 +54,7 @@
      styleForElement.push(large ? styles.modifiers.iconOnlyLarge[elementType] : styles.modifiers.iconOnly[elementType]);
    } else if (icon) {
      // If it has a title and icon, get the style for that.
-     styleForElement.push(styles.modifiers.textAndIcon[elementType]);
+     styleForElement.push(styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType]);
    }
 
    // Userland styles.
