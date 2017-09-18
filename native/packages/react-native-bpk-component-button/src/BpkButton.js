@@ -59,7 +59,7 @@
    }
 
    // Userland styles.
-   if (style[elementType]) {
+   if (style && style[elementType]) {
      styleForElement.push(style[elementType]);
    }
 

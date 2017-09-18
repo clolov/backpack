@@ -15,7 +15,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
     ]
@@ -45,7 +45,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -59,12 +59,14 @@ exports[`iOS BpkButton should render correctly 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -75,11 +77,20 @@ exports[`iOS BpkButton should render correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+            ],
           ]
         }
       >
@@ -105,7 +116,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
     ]
@@ -135,7 +146,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -157,12 +168,14 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -173,14 +186,23 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
-            Object {
-              "color": "rgb(255, 84, 82)",
-            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
+              },
+            ],
           ]
         }
       >
@@ -206,7 +228,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
     ]
@@ -236,7 +258,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -250,12 +272,14 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -266,11 +290,20 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+            ],
           ]
         }
       >
@@ -296,7 +329,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
     ]
@@ -326,7 +359,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -340,12 +373,14 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -356,11 +391,20 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+            ],
           ]
         }
       >
@@ -386,7 +430,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
     ]
@@ -416,7 +460,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -438,12 +482,14 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -454,14 +500,23 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
-            Object {
-              "color": "rgb(0, 178, 214)",
-            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
+            ],
           ]
         }
       >
@@ -487,9 +542,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
+      undefined,
     ]
   }
 >
@@ -517,11 +573,15 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
             "paddingTop": 8,
+          },
+          Object {
+            "paddingLeft": 12,
+            "paddingRight": 12,
           },
         ],
       ]
@@ -531,12 +591,17 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
       }
     >
       <Text
@@ -547,11 +612,23 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "marginRight": 4,
+              },
+            ],
           ]
         }
       >
@@ -580,7 +657,7 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
       Object {
@@ -613,12 +690,13 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
             "paddingTop": 8,
           },
+          undefined,
         ],
       ]
     }
@@ -627,12 +705,15 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
       <Image
@@ -658,11 +739,8 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
-      },
-      Object {
-        "width": 100,
       },
     ]
   }
@@ -691,7 +769,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -705,12 +783,14 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
       <Text
@@ -721,11 +801,20 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+            ],
           ]
         }
       >
@@ -751,12 +840,12 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
       Object {
         "borderRadius": 24,
-        "height": 48,
+        "minHeight": 48,
       },
     ]
   }
@@ -785,7 +874,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -793,7 +882,8 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
           },
           Object {
             "borderRadius": 24,
-            "height": 48,
+            "minHeight": 48,
+            "paddingLeft": 8,
           },
         ],
       ]
@@ -803,12 +893,15 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
       <Text
@@ -819,14 +912,23 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
-            Object {
-              "fontSize": 17,
-            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "fontSize": 17,
+              },
+            ],
           ]
         }
       >
@@ -852,12 +954,12 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
       Object {
         "borderRadius": 24,
-        "height": 48,
+        "minHeight": 48,
       },
     ]
   }
@@ -886,7 +988,7 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -894,7 +996,8 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
           },
           Object {
             "borderRadius": 24,
-            "height": 48,
+            "minHeight": 48,
+            "paddingLeft": 8,
           },
         ],
       ]
@@ -904,12 +1007,15 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
       <Text
@@ -920,14 +1026,23 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
-            Object {
-              "fontSize": 17,
-            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "fontSize": 17,
+              },
+            ],
           ]
         }
       >
@@ -953,9 +1068,10 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
     Array [
       Object {
         "borderRadius": 16,
-        "height": 32,
+        "minHeight": 32,
         "minWidth": 150,
       },
+      undefined,
     ]
   }
 >
@@ -983,7 +1099,7 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
         Array [
           Object {
             "borderRadius": 16,
-            "height": 32,
+            "minHeight": 32,
             "paddingBottom": 8,
             "paddingLeft": 8,
             "paddingRight": 8,
@@ -1000,12 +1116,15 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
       <Text
@@ -1016,14 +1135,23 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "color": "rgb(255, 255, 255)",
-              "fontSize": 13,
-              "fontWeight": "600",
+              "color": "rgb(37, 32, 51)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
             },
-            Object {
-              "color": "rgb(255, 255, 255)",
-            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+                "fontSize": 13,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
           ]
         }
       >
