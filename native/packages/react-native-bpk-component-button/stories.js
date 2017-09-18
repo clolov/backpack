@@ -63,6 +63,7 @@ const buttonStyles = StyleSheet.create({
 
 const capitalise = input => input[0].toUpperCase() + input.substring(1);
 
+// Utility for creating arrow icons to show in the buttons.
 const ArrowImage = ({ large, type }) => {
   const style = [large ? styles.imageLarge : styles.image];
   if (type === 'destructive') {
@@ -84,7 +85,7 @@ ArrowImage.defaultProps = {
   type: '',
 };
 
-const buttonStories = BUTTON_TYPES.map(type => (
+const generateButtonStoryForType = type => (
   <View key={type}>
     <BpkText textStyle="xxl">{capitalise(type)}</BpkText>
     <BpkText textStyle="xl">Standard</BpkText>
@@ -166,7 +167,9 @@ const buttonStories = BUTTON_TYPES.map(type => (
       />
     </View>
   </View>
-));
+);
+
+const allButtonStories = BUTTON_TYPES.map(generateButtonStoryForType);
 
 storiesOf('BpkButton', module)
   .addDecorator(getStory =>
@@ -174,8 +177,63 @@ storiesOf('BpkButton', module)
       {getStory()}
     </View>,
   )
-  .add('Default', () => (
+  .add('Primary', () => (
     <ScrollView>
-      {buttonStories}
+      {generateButtonStoryForType('primary')}
+    </ScrollView>
+  ))
+  .add('Secondary', () => (
+    <ScrollView>
+      {generateButtonStoryForType('secondary')}
+    </ScrollView>
+  ))
+  .add('Featured', () => (
+    <ScrollView>
+      {generateButtonStoryForType('featured')}
+    </ScrollView>
+  ))
+  .add('Destructive', () => (
+    <ScrollView>
+      {generateButtonStoryForType('destructive')}
+    </ScrollView>
+  ))
+  .add('All Button Types', () => (
+    <ScrollView>
+      <BpkText textStyle="xxl">All Types</BpkText>
+      {allButtonStories}
+    </ScrollView>
+  ))
+  .add('Edge cases', () => (
+    <ScrollView>
+      <BpkText textStyle="xxl">Edge Cases</BpkText>
+      <BpkText>Long button titles</BpkText>
+      <BpkButton
+        type="primary"
+        title="I have a really long title"
+        onPress={action('Button with long title pressed')}
+        style={buttonStyles}
+      />
+      <BpkButton
+        large
+        type="primary"
+        title="I also have a really long title"
+        onPress={action('Large button with long title pressed')}
+        style={buttonStyles}
+      />
+      <BpkButton
+        type="primary"
+        title="I have an absurdly long title and an icon and may cause wrapping"
+        icon={<ArrowImage />}
+        onPress={action('Button with icon and long title pressed')}
+        style={buttonStyles}
+      />
+      <BpkButton
+        large
+        type="primary"
+        title="I also have an absurdly long title and an icon and may cause wrapping"
+        icon={<ArrowImage />}
+        onPress={action('Large button with icon and long title pressed')}
+        style={buttonStyles}
+      />
     </ScrollView>
   ));

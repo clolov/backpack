@@ -74,6 +74,7 @@ export const STAR_RATING = '/components/molecules/star-rating';
 // components/native/
 export const NATIVE = '/components/native';
 export const NATIVE_TEXT = '/components/native/text';
+export const NATIVE_BUTTON = '/components/native/button';
 
 // components/utilities/
 export const UTILITIES = '/components/utilities';

@@ -4,8 +4,14 @@
 
 ## Installation
 
+1. Install the NPM package:
 ```sh
 npm install react-native-bpk-component-button --save-dev
+```
+
+1. Add to your Podfile (iOS only):
+```sh
+pod 'BpkButton', :path => 'node_modules/react-native-bpk-component-button'
 ```
 
 ## Usage
