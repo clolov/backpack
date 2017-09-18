@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    paddingLeft: tokens.spacingMd,
+    paddingRight: tokens.spacingMd,
   },
   btnContainer: {
     flexDirection: 'row',
@@ -52,16 +53,17 @@ const styles = StyleSheet.create({
   imageDestructive: {
     tintColor: tokens.colorRed500,
   },
+  bottomMargin: {
+    marginBottom: tokens.spacingSm,
+  },
 });
 
 const buttonStyles = StyleSheet.create({
   container: {
-    marginBottom: 10,
-    marginRight: 10,
+    marginBottom: tokens.spacingMd,
+    marginRight: tokens.spacingMd,
   },
 });
-
-const capitalise = input => input[0].toUpperCase() + input.substring(1);
 
 // Utility for creating arrow icons to show in the buttons.
 const ArrowImage = ({ large, type }) => {
@@ -87,12 +89,11 @@ ArrowImage.defaultProps = {
 
 const generateButtonStoryForType = type => (
   <View key={type}>
-    <BpkText textStyle="xxl">{capitalise(type)}</BpkText>
-    <BpkText textStyle="xl">Standard</BpkText>
+    <BpkText textStyle="xs" style={styles.bottomMargin}>Default</BpkText>
     <View style={styles.btnContainer}>
       <BpkButton
         type={type}
-        title={capitalise(type)}
+        title="Button"
         onPress={action(`${type} pressed`)}
         style={buttonStyles}
       />
@@ -125,12 +126,12 @@ const generateButtonStoryForType = type => (
       />
     </View>
 
-    <BpkText textStyle="xl">Large</BpkText>
+    <BpkText textStyle="xs" style={styles.bottomMargin}>Large</BpkText>
     <View style={styles.btnContainer}>
       <BpkButton
         large
         type={type}
-        title={capitalise(type)}
+        title="Button"
         onPress={action(`${type} pressed`)}
         style={buttonStyles}
       />
@@ -177,25 +178,25 @@ storiesOf('BpkButton', module)
       {getStory()}
     </View>,
   )
-  .add('Primary', () => (
-    <ScrollView>
+  .add('docs:primary', () => (
+    <View>
       {generateButtonStoryForType('primary')}
-    </ScrollView>
+    </View>
   ))
-  .add('Secondary', () => (
-    <ScrollView>
+  .add('docs:secondary', () => (
+    <View>
       {generateButtonStoryForType('secondary')}
-    </ScrollView>
+    </View>
   ))
-  .add('Featured', () => (
-    <ScrollView>
-      {generateButtonStoryForType('featured')}
-    </ScrollView>
-  ))
-  .add('Destructive', () => (
-    <ScrollView>
+  .add('docs:destructive', () => (
+    <View>
       {generateButtonStoryForType('destructive')}
-    </ScrollView>
+    </View>
+  ))
+  .add('docs:featured', () => (
+    <View>
+      {generateButtonStoryForType('featured')}
+    </View>
   ))
   .add('All Button Types', () => (
     <ScrollView>
@@ -203,8 +204,8 @@ storiesOf('BpkButton', module)
       {allButtonStories}
     </ScrollView>
   ))
-  .add('Edge cases', () => (
-    <ScrollView>
+  .add('Edge Cases', () => (
+    <View>
       <BpkText textStyle="xxl">Edge Cases</BpkText>
       <BpkText>Long button titles</BpkText>
       <BpkButton
@@ -235,5 +236,5 @@ storiesOf('BpkButton', module)
         onPress={action('Large button with icon and long title pressed')}
         style={buttonStyles}
       />
-    </ScrollView>
+    </View>
   ));

@@ -19,7 +19,11 @@
 import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-button/readme.md';
-import iosScreenshot from 'react-native-bpk-component-button/screenshots/ios.png';
+
+import iosScreenshotPrimary from 'react-native-bpk-component-button/screenshots/ios/primary.png';
+import iosScreenshotSecondary from 'react-native-bpk-component-button/screenshots/ios/secondary.png';
+import iosScreenshotDestructive from 'react-native-bpk-component-button/screenshots/ios/destructive.png';
+import iosScreenshotFeatured from 'react-native-bpk-component-button/screenshots/ios/featured.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -36,8 +40,8 @@ const components = [
         title: 'iOS',
         width: 750,
         height: 1334,
-        src: `/${iosScreenshot}`,
-        altText: 'iOS Default Button Component',
+        src: `/${iosScreenshotPrimary}`,
+        altText: 'iOS Primary Button Component',
         subText: '(iPhone 7 Simulator)',
       },
       {
@@ -45,7 +49,73 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidEmpty}`,
-        altText: 'Android Default Text Component',
+        altText: 'Android Primary Text Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'secondary',
+    title: 'Secondary',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotSecondary}`,
+        altText: 'iOS Secondary Button Component',
+        subText: '(iPhone 7 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidEmpty}`,
+        altText: 'Android Secondary Text Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'destructive',
+    title: 'Destructive',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotDestructive}`,
+        altText: 'iOS Destructive Button Component',
+        subText: '(iPhone 7 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidEmpty}`,
+        altText: 'Android Destructive Text Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'featured',
+    title: 'Featured',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotFeatured}`,
+        altText: 'iOS Featured Button Component',
+        subText: '(iPhone 7 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidEmpty}`,
+        altText: 'Android Featured Text Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -59,6 +129,10 @@ const NativeTextPage = () => <DocsPageBuilder
       The Backpack button component is for all your button pressing needs. It&#39;s a wrapper around the React
       Native <BpkLink href={reactNativeUrl}>TouchableHighlight component</BpkLink>, therefore it supports all the
       same behaviours and properties.
+    </Paragraph>,
+    <Paragraph>
+      There are four types of button: primary, secondary, destructive and featured. All button types can be
+      large, selected or disabled. They can have a title, an icon, or both.
     </Paragraph>,
   ]}
   components={components}
