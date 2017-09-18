@@ -712,60 +712,6 @@
       "name": "lineHeightXxl"
     },
     {
-      "value": "0.07",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.07
-      },
-      "name": "letterSpacingXs"
-    },
-    {
-      "value": "-0.08",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": -0.08
-      },
-      "name": "letterSpacingSm"
-    },
-    {
-      "value": "-0.24",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": -0.24
-      },
-      "name": "letterSpacingBase"
-    },
-    {
-      "value": "0",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0
-      },
-      "name": "letterSpacingLg"
-    },
-    {
-      "value": "0.38",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.38
-      },
-      "name": "letterSpacingXl"
-    },
-    {
-      "value": "0.41",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.41
-      },
-      "name": "letterSpacingXxl"
-    },
-    {
       "value": "11",
       "type": "size",
       "category": "font-sizes",
@@ -791,15 +737,6 @@
         "value": 13
       },
       "name": "textXsLineHeight"
-    },
-    {
-      "value": "0.07",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.07
-      },
-      "name": "textXsLetterSpacing"
     },
     {
       "value": "13",
@@ -829,15 +766,6 @@
       "name": "textSmLineHeight"
     },
     {
-      "value": "-0.08",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": -0.08
-      },
-      "name": "textSmLetterSpacing"
-    },
-    {
       "value": "15",
       "type": "size",
       "category": "font-sizes",
@@ -863,15 +791,6 @@
         "value": 20
       },
       "name": "textBaseLineHeight"
-    },
-    {
-      "value": "-0.24",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": -0.24
-      },
-      "name": "textBaseLetterSpacing"
     },
     {
       "value": "17",
@@ -901,15 +820,6 @@
       "name": "textLgLineHeight"
     },
     {
-      "value": "0",
-      "type": "size",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0
-      },
-      "name": "textLgLetterSpacing"
-    },
-    {
       "value": "20",
       "type": "size",
       "category": "font-sizes",
@@ -937,15 +847,6 @@
       "name": "textXlLineHeight"
     },
     {
-      "value": "0.38",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.38
-      },
-      "name": "textXlLetterSpacing"
-    },
-    {
       "value": "34",
       "type": "size",
       "category": "font-sizes",
@@ -971,15 +872,6 @@
         "value": 41
       },
       "name": "textXxlLineHeight"
-    },
-    {
-      "value": "0.41",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.41
-      },
-      "name": "textXxlLetterSpacing"
     },
     {
       "value": "600",

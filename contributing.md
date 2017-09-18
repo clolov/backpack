@@ -233,6 +233,12 @@ which is available for macOS. Windows and Linux installation for these packages 
 
 In future, we intend to automate more of this to reduce the number of steps required.
 
+##### Watchman (if not already installed)
+
+```
+brew install watchman
+```
+
 ##### Java
 
 ```
@@ -251,7 +257,7 @@ Add an environment variable pointing to the SDK location to your `~/.bash_profil
 (or similarly used file):
 
 ```
-echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile && source ~/.bash_profile
 ```
 
 Accept the SDK licences:
@@ -260,7 +266,8 @@ Accept the SDK licences:
 $ANDROID_HOME/tools/bin/sdkmanager --licenses
 ```
 
-Download an Android system image:
+Download an Android system image. Note that you may get a warning about a `.cfg` file not being present.
+You're safe to ignore this.
 
 ```
 $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-24;google_apis;x86"

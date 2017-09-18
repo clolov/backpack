@@ -28,6 +28,7 @@ export const categoryPropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(linkPropType).isRequired,
+  sort: PropTypes.bool,
 });
 
 export const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([

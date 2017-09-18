@@ -4,6 +4,86 @@
 
 _Nothing yet..._
 
+## 2017-09-12 - New React Native Text component
+
+**_Note:_** _There was an issue during the package publishing step which resulted in all changed packages being published twice by mistake. Apologies for any confusion._
+
+**Breaking:**
+- bpk-tokens: 25.0.0 => 26.0.0
+  - Removed ios and android letter spacing tokens
+
+**Added:**
+- react-native-bpk-component-text: 2.0.0
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text
+
+**Fixed:**
+- bpk-animate-height: 1.0.13 => 1.0.14
+- bpk-component-accordion: 1.1.20 => 1.1.21
+- bpk-component-autosuggest: 3.0.33 => 3.0.34
+- bpk-component-badge: 1.0.13 => 1.0.14
+- bpk-component-banner-alert: 1.2.7 => 1.2.8
+- bpk-component-barchart: 2.0.9 => 2.0.10
+- bpk-component-blockquote: 1.1.7 => 1.1.8
+- bpk-component-breakpoint: 1.0.13 => 1.0.14
+- bpk-component-button: 1.6.52 => 1.6.53
+- bpk-component-calendar: 4.1.3 => 4.1.4
+- bpk-component-card: 1.0.13 => 1.0.14
+- bpk-component-checkbox: 1.3.18 => 1.3.19
+- bpk-component-chip: 1.1.8 => 1.1.9
+- bpk-component-close-button: 1.0.13 => 1.0.14
+- bpk-component-code: 1.0.13 => 1.0.14
+- bpk-component-content-container: 1.1.19 => 1.1.20
+- bpk-component-datepicker: 7.1.3 => 7.1.4
+- bpk-component-fieldset: 1.0.13 => 1.0.14
+- bpk-component-form-validation: 1.0.13 => 1.0.14
+- bpk-component-grid-toggle: 1.0.13 => 1.0.14
+- bpk-component-grid: 1.1.19 => 1.1.20
+- bpk-component-heading: 2.1.19 => 2.1.20
+- bpk-component-horizontal-nav: 1.0.19 => 1.0.20
+- bpk-component-icon: 3.13.1 => 3.13.2
+- bpk-component-image: 1.0.3 => 1.0.4
+- bpk-component-input: 3.2.20 => 3.2.21
+- bpk-component-label: 3.2.19 => 3.2.20
+- bpk-component-link: 1.0.13 => 1.0.14
+- bpk-component-list: 1.0.13 => 1.0.14
+- bpk-component-loading-button: 1.0.13 => 1.0.14
+- bpk-component-mobile-scroll-container: 1.0.13 => 1.0.14
+- bpk-component-modal: 1.1.20 => 1.1.21
+- bpk-component-nudger: 1.0.13 => 1.0.14
+- bpk-component-panel: 1.0.13 => 1.0.14
+- bpk-component-paragraph: 1.0.13 => 1.0.14
+- bpk-component-popover: 1.2.16 => 1.2.17
+- bpk-component-progress: 1.0.13 => 1.0.14
+- bpk-component-radio: 1.1.19 => 1.1.20
+- bpk-component-router-link: 1.0.13 => 1.0.14
+- bpk-component-rtl-toggle: 1.0.13 => 1.0.14
+- bpk-component-select: 2.1.19 => 2.1.20
+- bpk-component-spinner: 2.1.19 => 2.1.20
+- bpk-component-star-rating: 1.0.13 => 1.0.14
+- bpk-component-table: 1.0.13 => 1.0.14
+- bpk-component-text: 1.0.11 => 1.0.12
+- bpk-component-textarea: 1.0.13 => 1.0.14
+- bpk-component-ticket: 1.0.13 => 1.0.14
+- bpk-component-tile: 0.0.18 => 0.0.19 (private)
+- bpk-component-tooltip: 2.0.9 => 2.0.10
+- bpk-react-utils: 2.3.2 => 2.3.3
+  - Prepared for React 16 by supporting it as a peer dependency.
+
+## 2017-09-07 - New fast train icon
+
+**Added:**
+- bpk-component-icon: 3.12.1 => 3.13.0
+- bpk-mixins: 16.4.1 => 16.5.0
+- bpk-svgs: 5.8.0 => 5.9.0
+  - Added fast train icon
+
+## 2017-09-06 - Bug fixes in BpkImage
+
+**Fixed:**
+- bpk-component-image: 1.0.0 => 1.0.1
+  - Fixed issue where lazy-loading HOC would not detect scrolling within a div
+  - Image background color will now be removed after the image is shown
+
 ## 2017-08-30 - Calendars/Datepickers can now set initally focused date / month
 
 **Added:**
