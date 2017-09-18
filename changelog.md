@@ -1,8 +1,10 @@
 # Backpack changelog
 
-## UNRELEASED
+## UNRELEASED - New React Native Button component
 
-_Nothing yet..._
+**Added:**
+- react-native-bpk-component-button
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
 
 ## 2017-09-12 - New React Native Text component
 
