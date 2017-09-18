@@ -18,7 +18,7 @@ pod 'BpkButton', :path => 'node_modules/react-native-bpk-component-button'
 
 ```js
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import BpkButton from 'react-native-bpk-component-button';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 

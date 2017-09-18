@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
   centered: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     paddingLeft: tokens.spacingMd,
     paddingRight: tokens.spacingMd,
   },
@@ -89,7 +88,7 @@ ArrowImage.defaultProps = {
 
 const generateButtonStoryForType = type => (
   <View key={type}>
-    <BpkText textStyle="xs" style={styles.bottomMargin}>Default</BpkText>
+    <BpkText textStyle="sm" style={styles.bottomMargin}>Default</BpkText>
     <View style={styles.btnContainer}>
       <BpkButton
         type={type}
@@ -126,7 +125,7 @@ const generateButtonStoryForType = type => (
       />
     </View>
 
-    <BpkText textStyle="xs" style={styles.bottomMargin}>Large</BpkText>
+    <BpkText textStyle="sm" style={styles.bottomMargin}>Large</BpkText>
     <View style={styles.btnContainer}>
       <BpkButton
         large

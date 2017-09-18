@@ -18,12 +18,13 @@
 
  import {
    View,
-   Text,
    TouchableHighlight,
  } from 'react-native';
  import React from 'react';
  import PropTypes from 'prop-types';
  import LinearGradient from 'react-native-linear-gradient';
+
+ import BpkText from 'react-native-bpk-component-text';
 
  import styles from './BpkButton-styles';
 
@@ -33,7 +34,7 @@
    // Start with base style.
    const styleForElement = [styles.base[elementType]];
 
-   // Add styles for the button type.
+   // Add styles for the button type (primary, secondary etc).
    if (styles.types[type] && styles.types[type][elementType]) {
      styleForElement.push(styles.types[type][elementType]);
    }
@@ -103,7 +104,7 @@
        >
          <View style={getStyleForElement('view', props)}>
            { title &&
-             <Text style={getStyleForElement('text', props)}>{title}</Text>
+             <BpkText style={getStyleForElement('text', props)}>{title}</BpkText>
            }
            {icon}
          </View>
