@@ -90,6 +90,10 @@
      ...rest
    } = props;
 
+   if (!BUTTON_TYPES.includes(type)) {
+     throw new Error(`"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(', ')}.`);
+   }
+
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
    return (

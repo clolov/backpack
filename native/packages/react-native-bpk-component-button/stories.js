@@ -224,7 +224,8 @@ storiesOf('BpkButton', module)
   .add('Edge Cases', () => (
     <View>
       <BpkText textStyle="xxl">Edge Cases</BpkText>
-      <BpkText>Long button titles</BpkText>
+
+      <BpkText textStyle="sm" style={styles.bottomMargin}>Long button titles</BpkText>
       <BpkButton
         type="primary"
         title="I have a really long title"
