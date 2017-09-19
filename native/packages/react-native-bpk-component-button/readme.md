@@ -9,10 +9,14 @@
 npm install react-native-bpk-component-button --save-dev
 ```
 
-1. Add to your Podfile (iOS only):
+1. Add some dependencies to your Podfile:
 ```sh
-pod 'BpkButton', :path => 'node_modules/react-native-bpk-component-button'
+pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+pod 'React', :path => '../node_modules/react-native'
+pod 'BVLinearGradient', :path => '../node_modules/react-native-bpk-component-button/node_modules/react-native-linear-gradient'
 ```
+
+**Note:** This is necessary because `react-native-bpk-component-button` depends on [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient).
 
 ## Usage
 
