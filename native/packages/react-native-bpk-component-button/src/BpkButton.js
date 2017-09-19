@@ -108,7 +108,7 @@
        >
          <View style={getStyleForElement('view', props)}>
            { title &&
-             <BpkText style={getStyleForElement('text', props)}>{title}</BpkText>
+             <BpkText textStyle="sm">{title}</BpkText>
            }
            {icon}
          </View>

@@ -39,18 +39,18 @@ const base = StyleSheet.create({
 
   // Applied to the outer LinearGradient element.
   container: {
-    // Must be half the height to get rounded corners.
     borderRadius: roundedBorderRadius,
-    minHeight: tokens.spacingXl,
-    // minWidth: 150,
+    height: tokens.spacingXl,
   },
 
   // Applied to the TouchableHighlight element.
   button: {
-    // Must be half the height to get rounded corners.
     borderRadius: roundedBorderRadius,
-    minHeight: tokens.spacingXl,
-    padding: tokens.spacingMd,
+    height: tokens.spacingXl,
+    paddingTop: tokens.spacingMd,
+    paddingBottom: tokens.spacingMd,
+    paddingLeft: tokens.spacingSm * 3,
+    paddingRight: tokens.spacingSm * 3,
   },
 
   // Applied to the View element that encloses the text and icon.
@@ -110,10 +110,10 @@ const modifiers = {
       minHeight: largeHeight,
     },
     button: {
-      // Must be half the height to get rounded corners.
       borderRadius: roundedBorderRadius,
       minHeight: largeHeight,
-      paddingLeft: tokens.spacingMd,
+      paddingLeft: tokens.spacingBase,
+      paddingRight: tokens.spacingBase,
     },
     text: {
       fontSize: tokens.textLgFontSize,
@@ -139,10 +139,18 @@ const modifiers = {
     container: {
       width: tokens.spacingXl,
     },
+    button: {
+      paddingLeft: tokens.spacingMd,
+      paddingRight: tokens.spacingMd,
+    },
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
       width: largeHeight,
+    },
+    button: {
+      paddingLeft: tokens.spacingMd,
+      paddingRight: tokens.spacingMd,
     },
   }),
   textAndIcon: StyleSheet.create({

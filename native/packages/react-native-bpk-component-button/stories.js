@@ -34,7 +34,7 @@ import BpkText from 'react-native-bpk-component-text';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
 
-import ArrowImageSrc from './rightarrow_360.png';
+import ArrowImageSrc from './long-arrow-right@3x.png';
 
 const IOS_TOKENS = require('bpk-tokens/tokens/ios/base.react.native.common.js');
 const ANDROID_TOKENS = require('bpk-tokens/tokens/android/base.react.native.common.js');
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   image: {
     height: 15,
     width: 17,
+    tintColor: tokens.colorWhite,
   },
   imageLarge: {
     height: 22,

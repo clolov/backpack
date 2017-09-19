@@ -5,6 +5,14 @@
 **Added:**
 - react-native-bpk-component-button
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
+- react-native-bpk-component-text:
+  - New `emphasize` prop
+- react-native-bpk-component-text-input:
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/input
+
+**Fixed:**
+- react-native-bpk-component-text:
+  - Default color is now gray700
 
 ## 2017-09-12 - New React Native Text component
 
