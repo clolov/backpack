@@ -18,13 +18,10 @@
 
 import { Platform, StyleSheet } from 'react-native';
 
-const IOS_TOKENS = require('bpk-tokens/tokens/ios/base.react.native.common.js');
-const ANDROID_TOKENS = require('bpk-tokens/tokens/android/base.react.native.common.js');
-
-const tokens = Platform.select({
-  ios: () => IOS_TOKENS,
-  android: () => ANDROID_TOKENS,
-})();
+const tokens = Platform.OS === 'ios' ?
+  require('bpk-tokens/tokens/ios/base.react.native.common.js') :
+  require('bpk-tokens/tokens/android/base.react.native.common.js')
+;
 
 // Slight darkness to use when buttons are pressed in.
 const underlayColor = 'rgba(0, 0, 0, 0.15)';
