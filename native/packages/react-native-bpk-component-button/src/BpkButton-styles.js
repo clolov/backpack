@@ -26,6 +26,9 @@ const tokens = Platform.OS === 'ios' ?
 // Slight darkness to use when buttons are pressed in.
 const underlayColor = 'rgba(0, 0, 0, 0.15)';
 
+// A high number used as a borderRadius value produces circular corners.
+const roundedBorderRadius = 100;
+
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.
 const largeHeight = tokens.spacingSm * 12;
@@ -37,15 +40,15 @@ const base = StyleSheet.create({
   // Applied to the outer LinearGradient element.
   container: {
     // Must be half the height to get rounded corners.
-    borderRadius: tokens.spacingXl / 2,
+    borderRadius: roundedBorderRadius,
     minHeight: tokens.spacingXl,
-    minWidth: 150,
+    // minWidth: 150,
   },
 
   // Applied to the TouchableHighlight element.
   button: {
     // Must be half the height to get rounded corners.
-    borderRadius: tokens.spacingXl / 2,
+    borderRadius: roundedBorderRadius,
     minHeight: tokens.spacingXl,
     padding: tokens.spacingMd,
   },
@@ -103,12 +106,12 @@ const types = {
 const modifiers = {
   large: StyleSheet.create({
     container: {
-      borderRadius: largeHeight / 2,
+      borderRadius: roundedBorderRadius,
       minHeight: largeHeight,
     },
     button: {
       // Must be half the height to get rounded corners.
-      borderRadius: largeHeight / 2,
+      borderRadius: roundedBorderRadius,
       minHeight: largeHeight,
       paddingLeft: tokens.spacingMd,
     },
@@ -134,12 +137,12 @@ const modifiers = {
   }),
   iconOnly: StyleSheet.create({
     container: {
-      minWidth: tokens.spacingXl,
+      width: tokens.spacingXl,
     },
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
-      minWidth: largeHeight,
+      width: largeHeight,
     },
   }),
   textAndIcon: StyleSheet.create({
