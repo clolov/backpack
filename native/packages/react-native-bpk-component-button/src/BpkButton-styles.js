@@ -28,7 +28,7 @@ const underlayColor = 'rgba(0, 0, 0, 0.15)';
 
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.
-const largeHeight = tokens.spacingXl * 1.5;
+const largeHeight = tokens.spacingSm * 12;
 const smallBorderWidth = tokens.spacingSm / 2;
 
 // The base styles that are initially applied to all buttons.
@@ -47,10 +47,7 @@ const base = StyleSheet.create({
     // Must be half the height to get rounded corners.
     borderRadius: tokens.spacingXl / 2,
     minHeight: tokens.spacingXl,
-    paddingTop: tokens.spacingMd,
-    paddingBottom: tokens.spacingMd,
-    paddingLeft: tokens.spacingMd,
-    paddingRight: tokens.spacingMd,
+    padding: tokens.spacingMd,
   },
 
   // Applied to the View element that encloses the text and icon.
